@@ -21,8 +21,9 @@ See the [User Guide PDF](./Qi_Etherealizer_Editor_1.0.pdf) for detailed instruct
 - Qi Etherealizer pedal
 
 ## Usage
-1. Connect your MIDI interface to your computer
-2. Connect the Qi Etherealizer to your MIDI interface
-3. Open the editor in a compatible browser
-4. Select your MIDI output port
-5. Start controlling your pedal!
+1. Create a folder on your computer, and download the index.html, styles.css, and scripts.js file to the folder 
+2. Connect your MIDI interface to your computer
+3. Connect the Qi Etherealizer to your MIDI interface
+4. Open the editor in a compatible browser
+5. Select your MIDI output port
+6. Start controlling your pedal!
