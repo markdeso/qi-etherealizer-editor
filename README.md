@@ -13,7 +13,7 @@ Web-based MIDI control interface for the Walrus Audio Qi Etherealizer pedal.
 - Works with any Web MIDI compatible browser
 
 ## Documentation
-See the [User Guide PDF](./Qi_Etherealizer_Editor_1.0.pdf) for detailed instructions.
+See the [User Guide PDF](./Qi Etherealizer Editor 1.0.pdf) for detailed instructions.
 
 ## Requirements
 - Chrome, Edge, or other Web MIDI compatible browser
