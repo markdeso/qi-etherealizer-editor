@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qi Etherealizer Editor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="midi-status" id="midiStatus">
+        <span class="midi-disconnected">MIDI Disconnected</span>
+    </div>
+
+    <div class="container">
+        <h1>
+            <span class="qi-logo">Qi</span>
+            <span class="etherealizer-text">ETHEREALIZER</span>
+        </h1>
+        
+        <div class="editor-grid">
+            <!-- Master Section -->
+            <div class="section master">
+                <h3 class="section-title">Master</h3>
+                <div class="section-content">
+                    <div class="control-group">
+                        <label class="control-label">Mix / Dry (CC 9)</label>
+                        <div class="knob-container">
+                            <div class="knob" data-cc="9" data-value="64"></div>
+                            <div class="knob-value">64</div>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">Tone (CC 14)</label>
+                        <div class="knob-container">
+                            <div class="knob" data-cc="14" data-value="64"></div>
+                            <div class="knob-value">64</div>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">Space (CC 15)</label>
+                        <div class="knob-container">
+                            <div class="knob" data-cc="15" data-value="64"></div>
+                            <div class="knob-value">64</div>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">Flow (CC 3)</label>
+                        <div class="toggle-group">
+                            <div class="toggle-btn active" data-cc="3" data-value="0">Series</div>
+                            <div class="toggle-btn" data-cc="3" data-value="1">Parallel</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grain Section -->
+            <div class="section grain">
+                <h3 class="section-title">Grain</h3>
+                <div class="section-content">
+                    <div class="control-group">
+                        <label class="control-label">Grain Mix (CC 25)</label>
+                        <div class="knob-container">
+                            <div class="knob" data-cc="25" data-value="64"></div>
+                            <div class="knob-value">64</div>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">Grain X (CC 26)</label>
+                        <div class="knob-container">
+                            <div class="knob" data-cc="26" data-value="64"></div>
+                            <div class="knob-value">64</div>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">Mode (CC 24)</label>
+                        <div class="toggle-group">
+                            <div class="toggle-btn active" data-cc="24" data-value="0">Cloud</div>
+                            <div class="toggle-btn" data-cc="24" data-value="1">Sample</div>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">Playback (CC 28)</label>
+                        <div class="toggle-group">
+                            <div class="toggle-btn active" data-cc="28" data-value="0">x1</div>
+                            <div class="toggle-btn" data-cc="28" data-value="1">x2</div>
+                            <div class="toggle-btn" data-cc="28" data-value="2">x.5</div>
+                            <div class="toggle-btn" data-cc="28" data-value="3">Rev</div>
+                            <div class="toggle-btn" data-cc="28" data-value="4">Rnd</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bypass-btn" data-cc="32">
+                    <span>Grain</span>
+                    <div style="font-size: 0.7rem; margin-top: 2px;">Bypass</div>
+                </div>
+            </div>
+
+            <!-- Delay Section -->
+            <div class="section delay">
+                <h3 class="section-title">Delay</h3>
+                <div class="section-content">
+                    <div class="control-group">
+                        <label class="control-label">Delay Mix (CC 21)</label>
+                        <div class="knob-container">
+                            <div class="knob" data-cc="21" data-value="64"></div>
+                            <div class="knob-value">64</div>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">Time (CC 22)</label>
+                        <div class="knob-container">
+                            <div class="knob" data-cc="22" data-value="64"></div>
+                            <div class="knob-value">64</div>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">Feedback (CC 23)</label>
+                        <div class="knob-container">
+                            <div class="knob" data-cc="23" data-value="64"></div>
+                            <div class="knob-value">64</div>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">Note (CC 20)</label>
+                        <div class="toggle-group">
+                            <div class="toggle-btn active" data-cc="20" data-value="0">Quarter</div>
+                            <div class="toggle-btn" data-cc="20" data-value="1">Dotted 8th</div>
+                            <div class="toggle-btn" data-cc="20" data-value="2">Eighth</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bypass-btn" data-cc="33">
+                    <span>Delay</span>
+                    <div style="font-size: 0.7rem; margin-top: 2px;">Bypass</div>
+                </div>
+            </div>
+
+            <!-- Chorus Section -->
+            <div class="section chorus">
+                <h3 class="section-title">Chorus</h3>
+                <div class="section-content">
+                    <div class="control-group">
+                        <label class="control-label">Chorus Mix (CC 17)</label>
+                        <div class="knob-container">
+                            <div class="knob" data-cc="17" data-value="64"></div>
+                            <div class="knob-value">64</div>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">Rate (CC 19)</label>
+                        <div class="knob-container">
+                            <div class="knob" data-cc="19" data-value="64"></div>
+                            <div class="knob-value">64</div>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">Depth (CC 18)</label>
+                        <div class="knob-container">
+                            <div class="knob" data-cc="18" data-value="64"></div>
+                            <div class="knob-value">64</div>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">Mode (CC 16)</label>
+                        <div class="toggle-group">
+                            <div class="toggle-btn active" data-cc="16" data-value="0">Tri</div>
+                            <div class="toggle-btn" data-cc="16" data-value="1">Stereo</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bypass-btn" data-cc="34">
+                    <span>Chorus</span>
+                    <div style="font-size: 0.7rem; margin-top: 2px;">Bypass</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Global Controls -->
+        <div class="controls-section">
+            <h3 class="section-title">Global Controls</h3>
+            
+            <!-- First Row: Core MIDI Controls -->
+            <div class="controls-grid controls-row-1">
+                <div class="control-group">
+                    <label class="control-label">MIDI Output Port</label>
+                    <select id="midiPortSelect" class="midi-port-select">
+                        <option value="">No MIDI Output Available</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">MIDI Channel</label>
+                    <select id="midiChannelSelect">
+                        <option value="1">Channel 1</option>
+                        <option value="2">Channel 2</option>
+                        <option value="3">Channel 3</option>
+                        <option value="4">Channel 4</option>
+                        <option value="5">Channel 5</option>
+                        <option value="6">Channel 6</option>
+                        <option value="7">Channel 7</option>
+                        <option value="8">Channel 8</option>
+                        <option value="9">Channel 9</option>
+                        <option value="10">Channel 10</option>
+                        <option value="11">Channel 11</option>
+                        <option value="12">Channel 12</option>
+                        <option value="13">Channel 13</option>
+                        <option value="14">Channel 14</option>
+                        <option value="15">Channel 15</option>
+                        <option value="16">Channel 16</option>
+                    </select>
+                </div>
+                
+                <div class="control-group">
+                    <label class="control-label">Refresh MIDI</label>
+                    <button id="refreshMidi">Refresh Ports</button>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">Pedal Bypass</label>
+                    <div class="bypass-btn" data-cc="31">
+                        <span>Pedal On</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Second Row: Preset Banks -->
+            <div class="controls-grid controls-row-2">
+                <div class="control-group">
+                    <label class="control-label">Presets 0-3 (Live + Colors)</label>
+                    <select id="presetSelectBank1">
+                        <option value="0">Live Mode</option>
+                        <option value="1">Red Preset</option>
+                        <option value="2">Green Preset</option>
+                        <option value="3">Blue Preset</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">Presets 4-32 (Custom)</label>
+                    <select id="presetSelectBank2">
+                        <option value="">Select Preset 4-32</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">Presets 33-64</label>
+                    <select id="presetSelectBank3">
+                        <option value="">Select Preset 33-64</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">Presets 65-96</label>
+                    <select id="presetSelectBank4">
+                        <option value="">Select Preset 65-96</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">Presets 97-128</label>
+                    <select id="presetSelectBank5">
+                        <option value="">Select Preset 97-128</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Save Preset Controls -->
+            <div class="save-preset-section">
+                <h3 class="section-title">Save Current Settings</h3>
+                <div class="save-preset-controls">
+                    <div class="control-group">
+                        <label class="control-label">Preset Name</label>
+                        <input type="text" id="presetNameInput" placeholder="Enter preset name..." maxlength="20">
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Select Bank</label>
+                        <select id="saveBankSelect">
+                            <option value="">Choose bank...</option>
+                            <option value="bank2">Bank 4-32 (Custom)</option>
+                            <option value="bank3">Bank 33-64</option>
+                            <option value="bank4">Bank 65-96</option>
+                            <option value="bank5">Bank 97-128</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Select Slot</label>
+                        <select id="saveSlotSelect" disabled>
+                            <option value="">Select bank first...</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <button id="savePresetBtn" class="save-btn">Save Preset</button>
+                    </div>
+                    <div class="control-group">
+                        <button id="deletePresetBtn" class="delete-btn">Delete Selected</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
