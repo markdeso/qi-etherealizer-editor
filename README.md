@@ -27,3 +27,7 @@ See the [User Guide PDF](./Qi_Etherealizer_Editor_1.0.pdf) for detailed instruct
 4. Open the editor in a compatible browser
 5. Select your MIDI output port
 6. Start controlling your pedal!
+
+## Buy me a coffee
+If you found this valuable and wish to show your appreciation, you can buy me a coffee!
+[Buy me a coffee](https://coff.ee/markdeso)
